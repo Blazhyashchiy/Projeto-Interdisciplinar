@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+
+<div class="container-main">
+    <div class="card-body">
+        <div class="header-bar">
+            <a href="{% url 'tasks' %}" class="back-button">&#8592; voltar</a>
+        </div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="button-login" type="submit" value="Confirmar">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
