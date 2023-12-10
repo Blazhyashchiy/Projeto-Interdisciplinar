@@ -1,31 +1,23 @@
 {% load static %}
 
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="description"
-        content="This is to do list implemented using Django by Dennis Ivy who is a full stack web developer.">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DDUCKTASK</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-
-    
-</head>
-
-<body>
-    <img src="/static/img/logo.png" alt="" class="logo-area">
-    <div class="container">
-        {% block content %} {% endblock content %}
-    </div>
-
-</body>
-
-
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Gerenciador de tarefas DDUCKTASK!">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DDUCKTASK</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        <link rel="shortcut icon" href="{% static '/static/img/icon.ico' %}" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <img src="/static/img/logo.png" alt="logo do site" class="logo-area">
+        <div class="container">
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
 </html>

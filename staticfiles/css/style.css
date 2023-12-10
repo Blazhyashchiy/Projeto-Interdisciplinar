@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 body {
     background: radial-gradient(203.01% 72.23% at 95.31% 92.45%, #32101A 0%, rgba(50, 16, 26, 0.00) 100%), #091823;
-    font-family: 'Nunito', sans-serif;
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
     overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
 }
 
 h3{
@@ -40,10 +40,12 @@ h3{
 }
 
 .card-body2{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-height: 70%;
     width: 500px;
     padding: 20px;
     padding-bottom: 50px;
@@ -176,11 +178,18 @@ a{
     margin-left: 10px;
 }
 
-.task-wrapper {
-    width: 400px;
+.task-items-wrapper{
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 1.5em;
+    height: 55%;
+    gap: 1em;
+}
+.task-wrapper{
+    width: 400px;
+    min-height: 70px;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     background:transparent;
@@ -192,6 +201,59 @@ a{
     transition: all .5s ease;
 }
 
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff transparent;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color:  #ffffff ;
+    border-radius: 20px;
+    border: 3px solid transparent;
+  }
+
+
+/* .task-items-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: 90%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.task-wrapper {
+    width: 400px;
+    min-height: 70px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background:transparent;
+    border-radius: 10px;
+    box-shadow: -2px -2px 4px 0px rgba(71, 21, 38, 0.50) inset, 2px 2px 4px 0px rgba(45, 65, 111, 0.50) inset, 10px 10px 4px 0px #110E15;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: all .5s ease;
+} */
+
+
+
+
 .task-wrapper:hover {
     -webkit-transform: scale(1.1);
    transform: scale(1.1);
@@ -202,6 +264,7 @@ a{
     display: flex;
     padding: 20px;
 }
+
 
 .task-title a {
     text-decoration: none;
@@ -359,6 +422,51 @@ label {
     color: white;
 }
 
+/*--------RESPONSIVE PART--------------*/
+
+@media screen and (max-width: 768px){
+    .card-body2{
+        width: 100vw;
+        height: 100vh;
+        box-shadow: none;
+
+    }
+    .card-body{
+        width: 100vw;
+        height: 100vh;
+        box-shadow: none;
+    }
+    .container-main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body{
+        background:#091823;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+
+    }
+    .task-wrapper{
+        width: 350px;
+        display: flex;
+        justify-content: space-between ;
+
+    }
+    .task-controls{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .handle{
+        padding: 0;
+    }
+    .delete-link{
+        padding: 10px 5px;
+        margin-left: 0;
+    }
 
 
-
+}
