@@ -33,8 +33,12 @@ comandos: https://dev.to/franciscojdsjr/guia-detalhado-dos-principais-comandos-d
     // Criar Perfil de ADM (OBS: preencher informações no terminal.)
     python manage.py createsuperuser
 
+    // Acessar perfil de ADM.
+    user: adm
+    password: 123
+
     // Banco de Dados.
-    python 
+    python manage.py migrate
 
     // Rodar Servidor.
     python manage.py runserver
